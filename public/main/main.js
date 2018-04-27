@@ -16,7 +16,7 @@ angular.module('myApp.main', ['ngRoute'])
 .controller('MainCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
   $scope.params = $routeParams;
 
-  $http.get("http://localhost:3000/news").then(function (response) {
+  $http.get("https://localhost:3000/news").then(function (response) {
 
     console.log(response.data);
     $scope.news = response.data
