@@ -39,7 +39,7 @@ angular.module('myApp.newsfinder', ['ngRoute'])
              }
          }
 //http://localhost:3000/news
-         $http.post('http://localhost:3000/news', data, config).then(function (response) {
+         $http.post(location.origin+'/news', data, config).then(function (response) {
            console.log("saved");
           console.log(response.data);
          })

@@ -16,7 +16,7 @@ angular.module('myApp.gossip', ['ngRoute'])
   $scope.series = ['Series A'];
   $scope.data = [[]];//[[65, 59, 80, 81, 56, 55, 40]];
 
-  $http.get("https://localhost:3000/news/date").then(function (response) {
+  $http.get(location.origin+"/news/date").then(function (response) {
 
     console.log(response.data);
     //$scope.news = response.data
@@ -55,7 +55,7 @@ $scope.bar.series = ['Series A'];
 
   $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
 
-  $http.get("https://localhost:3000/news/site").then(function (response) {
+  $http.get( location.origin+"/news/site").then(function (response) {
 
     console.log(response.data);
     //$scope.news = response.data
