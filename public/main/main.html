@@ -1,0 +1,17 @@
+
+<div class="row">
+        <div class="col-md-offset-2 col-md-9">
+                <ul class="news-list">
+                        <li ng-repeat="x in news" style="border-bottom:2px orchid solid;padding: 20px 0; ">
+                            <img width='50%' src="{{x.thread.main_image}}" >
+                           <h3> <a ng-href="#!/main/{{x._id}}" >{{x.title}}</a> </h3>
+                           <h4><strong>{{x.author}}</strong></h4> 
+                           <h4>source :<strong> {{x.thread.site_full}} </strong> |  {{ x.published | date:'yyyy-MM-dd'}} | 
+                                <i style="color: rgb(0, 153, 255);" class="fa fa-thumbs-up" aria-hidden="true"></i> {{x.thread.social.facebook.likes}} 
+                                  </h4>  
+                        </li>
+                    </ul>
+        </div>
+</div>
+
+

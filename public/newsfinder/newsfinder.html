@@ -1,0 +1,19 @@
+<!--GetNews : <input type="text" id="search" ng-model="next" >-->
+<button type="button" ng-click="GetNews()" class="btn btn-success">Cari</button><br>
+Data sekarang {{next}}
+
+<br>
+<h4> moreResultsAvailable: {{output.moreResultsAvailable}}</h4>
+<h4> totalResults: {{output.totalResults}}</h4>
+ next: {{output.next}}
+<h4> requestsLeft: {{output.requestsLeft}}</h4>
+
+<button type="button" ng-click="SaveData()" class="btn btn-success">Simpan</button>
+
+
+
+<form action="http://localhost:3000/news" method="post">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    <input type="submit" value="Submit">
+  </form> 
