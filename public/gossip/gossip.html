@@ -1,4 +1,18 @@
 <h2>Statistik Jumlah Gosip Berdasarkan Tanggal</h2>
+<div class="btn-group">
+    <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Hari'">Hari</label>
+    <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Bulan'">Bulan</label>
+</div>
+<div ng-if="radioModel=='Hari'">
+    Pilih Tanggal : <input type="number" name="date" min="1" max="30" ng-model="selectedDate" >
+    Pilih Bulan : <select ng-options="x.name for x in months.available track by x.val" ng-model="months.selected" ></select>
+    <button type="button" ng-click="setday(months.selected.val , selectedDate)">OK</button>
+</div>
+<div ng-if="radioModel=='Bulan'">
+    Pilih Bulan :   <select  ng-options="x.name for x in months.available track by x.val" ng-model="months.selected"></select>
+    <button type="button" ng-click="setmonth(months.selected.val)">OK</button>
+</div>
+
 <div style="width:60%;">
 <canvas  id="line" class="chart chart-line" 
 chart-data="data" chart-labels="labels" chart-series="series" 
@@ -6,10 +20,21 @@ chart-options="options" chart-dataset-override="datasetOverride"
 chart-click="onClick" chart-colors="colors">
 </canvas>
 </div>
+<ul class="news-list">
+        <li ng-repeat="x in news" style="border-bottom:2px orchid solid;padding: 20px 0; ">
+           <h3> <a ng-href="#!/main/{{x._id}}" >{{x.title}}</a> </h3>
+           <h5><strong>{{x.author}}</strong></h5> 
+           <h5>source :<strong> {{x.thread.site_full}} </strong> |  {{ x.published | date:'yyyy-MM-dd'}} | 
+                <i style="color: rgb(0, 153, 255);" class="fa fa-thumbs-up" aria-hidden="true"></i> {{x.thread.social.facebook.likes}} 
+            </h5>  
+        </li>
+</ul>
 
+<!--
 <h2>Statistik Sumber Gosip Berdasarkan Sumber Berita</h2>
 <div style="width:60%;">
     <canvas id="bar" class="chart chart-bar"
     chart-data="bar.data" chart-labels="bar.labels" chart-series="bar.series" >
     </canvas>
 </div>
+-->

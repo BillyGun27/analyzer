@@ -17,7 +17,6 @@ angular.module('myApp.main', ['ngRoute'])
   $scope.params = $routeParams;
 
   $http.get(location.origin+"/news").then(function (response) {
-
     console.log(response.data);
     $scope.news = response.data
    // 

@@ -1,0 +1,14 @@
+<div style="padding: 50px;">
+ <h4>Cari Berita</h4>
+    <input type="text"  ng-model="keywords"  class="form-control" ><button type="button" class="btn btn-info"  ng-click="search()">search</button>
+</div>
+
+<ul class="news-list">
+    <li ng-repeat="x in news" style="border-bottom:2px orchid solid;padding: 20px 0; ">
+       <h3> <a ng-href="#!/main/{{x._id}}" >{{x.title}}</a> </h3>
+       <h5><strong>{{x.author}}</strong></h5> 
+       <h5>source :<strong> {{x.thread.site_full}} </strong> |  {{ x.published | date:'yyyy-MM-dd'}} | 
+            <i style="color: rgb(0, 153, 255);" class="fa fa-thumbs-up" aria-hidden="true"></i> {{x.thread.social.facebook.likes}} 
+        </h5>  
+    </li>
+</ul>

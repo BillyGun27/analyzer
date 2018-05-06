@@ -5,7 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.main',
   'myApp.gossip',
-  'myApp.newsfinder',
+  //'myApp.newsfinder',
   'ui.bootstrap',
   'ngStorage',
   'chart.js'
