@@ -69,7 +69,7 @@ $scope.setday = function (month,day){
     prop : "published",
     search:  "2018-"+month+"-"+("0"+day).slice(-2)
   };
-
+  console.log("start filter");
 //location.origin+"/news/filter/search"
  $http.post(location.origin+"/news/filter/search", data).then(function (response) {
   console.log("news");
@@ -103,7 +103,7 @@ $scope.setmonth = function (month){
      prop : "published",
      search:  "2018-"+month
    };
- 
+   console.log("start filter");
  //location.origin+"/news/filter/search"
   $http.post(location.origin+"/news/filter/search", data).then(function (response) {
    console.log("news");
@@ -137,6 +137,7 @@ $scope.setmonth = function (month){
 $scope.colors =   [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
 
 //bar
+/*
 $scope.bar = {};
 $scope.bar.labels =[];//=  ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
 $scope.bar.series = ['Series A'];
@@ -152,7 +153,7 @@ $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
     }
     console.log($scope.bar.labels);
   })
-
+*/
 
 }])
 .controller('SearchCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
@@ -176,7 +177,7 @@ $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
    
    
    
-   }
+  }
   // $scope.setmonth($scope.months.selected.val );
  
 }]);
