@@ -23,12 +23,12 @@ function callNews(){
   
     const query_params = {
       "q": "thread.country:ID site_category:celebrity_fan_gossip",
-      "ts":"1522865059424",
+      "ts":"1521470830510",
       "sort": "crawled"
     }
 
    ClientHead =  client.query('filterWebContent', query_params)
-      .then(output => {
+ /*     .then(output => {
           console.log("head");
             MongoClient.connect(url, function(err, db) {
               if (err) throw err;
@@ -47,8 +47,8 @@ function callNews(){
         console.log( output.next );
         console.log( output.totalResults );
         return client.getNext();
-      })
-/*
+      })*/
+
       for(var i = 0;i<32;i++){
         
         ClientHead =  ClientHead.then(output => {
@@ -74,7 +74,7 @@ function callNews(){
           });
 
 
-      }*/
+      }
     
     
 

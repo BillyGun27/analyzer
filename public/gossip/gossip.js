@@ -23,7 +23,7 @@ angular.module('myApp.gossip', ['ngRoute'])
   selected: {val:"04",name:"April"} //This sets the default value of the select in the ui
   };
   $scope.radioModel = 'Hari';
-  $scope.selectedDate = 4;
+  $scope.selectedDate = 7;
  // $scope.selectedMonth = {val:"04",name:"April"} ;
   //
 
