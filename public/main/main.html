@@ -1,4 +1,4 @@
-
+<!--
 <div class="row">
         <div class="col-md-offset-2 col-md-9">
                 <ul class="news-list">
@@ -12,6 +12,100 @@
                         </li>
                     </ul>
         </div>
-</div>
+</div>-->
 
-
+<section id="mainContent">
+        <div class="content_top">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm6">
+              <div class="latest_slider">
+                <div class="slick_slider">
+                  <div class="single_iteam"><img src="{{news[0].thread.main_image}}" alt="">
+                    <h2><a class="slider_tittle" ng-href="#!/main/{{news[0]._id}}">{{news[0].title}}</a></h2>
+                  </div>
+                  <!--
+                  <div class="single_iteam"><img src="images/550x330x2.jpg" alt="">
+                    <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+                  </div>
+                  <div class="single_iteam"><img src="images/550x330x3.jpg" alt="">
+                    <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+                  </div>
+                  <div class="single_iteam"><img src="images/550x330x4.jpg" alt="">
+                    <h2><a class="slider_tittle" href="pages/single.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
+                  </div>-->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm6">
+              <div class="content_top_right">
+                <ul class="featured_nav wow fadeInDown">
+                  <li><img src="{{news[1].thread.main_image}}" alt="">
+                    <div class="title_caption"><a ng-href="#!/main/{{news[1]._id}}">{{news[1].title}}</a></div>
+                  </li>
+                  <li><img src="{{news[2].thread.main_image}}" alt="">
+                        <div class="title_caption"><a ng-href="#!/main/{{news[2]._id}}">{{news[2].title}}</a></div>
+                      </li>
+                <li><img src="{{news[3].thread.main_image}}" alt="">
+                <div class="title_caption"><a ng-href="#!/main/{{news[3]._id}}">{{news[3].title}}</a></div>
+                </li>
+                <li><img src="{{news[4].thread.main_image}}" alt="">
+                        <div class="title_caption"><a ng-href="#!/main/{{news[4]._id}}">{{news[4].title}}</a></div>
+                </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_middle">
+          <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="content_middle_leftbar">
+              <div class="single_category wow fadeInDown">
+                <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a href="#" class="title_text">Populer</a> </h2>
+                <ul class="catg1_nav">
+                  <li>
+                    <div class="catgimg_container"> <a ng-href="#!/main/{{news[5]._id}}" class="catg1_img"><img alt="" src="{{news[5].thread.main_image}}"></a></div>
+                    <h3 class="post_titile"><a ng-href="#!/main/{{news[5]._id}}">{{news[5].title}}</a></h3>
+                  </li>
+                  <li>
+                     <div class="catgimg_container"> <a ng-href="#!/main/{{news[6]._id}}" class="catg1_img"><img alt="" src="{{news[6].thread.main_image}}"></a></div>
+                     <h3 class="post_titile"><a ng-href="#!/main/{{news[6]._id}}">{{news[6].title}}</a></h3>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="content_middle_middle">
+                <div class="single_category wow fadeInDown">
+                        <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a href="#" class="title_text">Trending</a> </h2>
+                        <ul class="catg1_nav">
+                        <li>
+                                <div class="catgimg_container"> <a ng-href="#!/main/{{news[7]._id}}" class="catg1_img"><img alt="" src="{{news[7].thread.main_image}}"></a></div>
+                                <h3 class="post_titile"><a ng-href="#!/main/{{news[7]._id}}">{{news[7].title}}</a></h3>
+                        </li>
+                        <li>
+                                <div class="catgimg_container"> <a ng-href="#!/main/{{news[8]._id}}" class="catg1_img"><img alt="" src="{{news[8].thread.main_image}}"></a></div>
+                                <h3 class="post_titile"><a ng-href="#!/main/{{news[8]._id}}">{{news[8].title}}</a></h3>
+                        </li>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="content_middle_rightbar">
+              <div class="single_category wow fadeInDown">
+                <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a href="#" class="title_text">Populer</a> </h2>
+                <ul class="catg1_nav">
+                        <li>
+                        <div class="catgimg_container"> <a ng-href="#!/main/{{news[9]._id}}" class="catg1_img"><img alt="" src="{{news[9].thread.main_image}}"></a></div>
+                        <h3 class="post_titile"><a ng-href="#!/main/{{news[9]._id}}">{{news[9].title}}</a></h3>
+                        </li>
+                        <li>
+                                <div class="catgimg_container"> <a ng-href="#!/main/{{news[10]._id}}" class="catg1_img"><img alt="" src="{{news[10].thread.main_image}}"></a></div>
+                                <h3 class="post_titile"><a ng-href="#!/main/{{news[10]._id}}">{{news[10].title}}</a></h3>
+                        </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>

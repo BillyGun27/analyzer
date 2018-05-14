@@ -20,16 +20,23 @@ const webhoseio = require('webhoseio');
 const client = webhoseio.config({token: 'd90435dc-535d-4a5a-995d-3dc9c2150960'});
 //callNews();
 function callNews(){
-  
+  /*
     const query_params = {
       "q": "thread.country:ID site_category:celebrity_fan_gossip",
-      "ts":"1521470830510",
+      "ts":"1526228933003",
       "sort": "crawled"
-    }
+    }*/
+    //us 1523642706678 ,1523642706678
+    const query_params = {
+      "q": "site_category:celebrity_fan_gossip language:english published:<1525107600000",
+      "ts": "1523642706678",
+      "sort": "published"
+        }
 
    ClientHead =  client.query('filterWebContent', query_params)
- /*     .then(output => {
+      .then(output => {
           console.log("head");
+          /*
             MongoClient.connect(url, function(err, db) {
               if (err) throw err;
               var dbo = db.db("analyzer");
@@ -38,7 +45,7 @@ function callNews(){
                   console.log("1 document inserted");
                   db.close();
                 });
-            }); 
+            }); */
         console.log( output['posts'][0]['thread']['title']); // Print the text of the first post
         console.log( output['posts'][0]['published']); // Print the text of the first post publication date
         //console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
@@ -47,9 +54,9 @@ function callNews(){
         console.log( output.next );
         console.log( output.totalResults );
         return client.getNext();
-      })*/
+      })
 
-      for(var i = 0;i<32;i++){
+      for(var i = 0;i<40;i++){
         
         ClientHead =  ClientHead.then(output => {
             MongoClient.connect(url, function(err, db) {
@@ -75,6 +82,7 @@ function callNews(){
 
 
       }
+      console.log("loop end");
     
     
 
@@ -148,7 +156,7 @@ router.get('/', function(req, res, next) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("analyzer");
-    dbo.collection("news").find().sort({published : -1  }).limit(50).toArray(function(err, result) {
+    dbo.collection("news").find({"thread.country":"ID"}).sort({published : -1  }).limit(50).toArray(function(err, result) {
       if (err) throw err;
      // console.log(result);
       res.send(result);
@@ -274,12 +282,13 @@ router.get('/filter/day/:month/:day', function(req, res, next) {
 router.post('/filter/search', function(req, res, next) {
   //request.body.email
 target = {};//Mytha Lestari Curhat
-target[req.body.prop] = { '$regex' :String(req.body.search)  , '$options' : 'i' };
+target[req.body.prop] = { '$regex' :String(req.body.search)  , '$options' : 'i'  };
+target["thread.country"] = 'ID';
 //console.log(req);
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("analyzer");
-    dbo.collection("news").find( target ).sort( { "thread.domain_rank":1 ,published: 1 } )
+    dbo.collection("news").find( target ).sort( { "thread.domain_rank":1 ,published: -1 } ).limit(10)
     .toArray(function(err, result) {
       if (err) throw err;
       //console.log(result);

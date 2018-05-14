@@ -115,7 +115,7 @@ $scope.setmonth = function (month){
  
  
  }
- $scope.setmonth($scope.months.selected.val );
+ //$scope.setmonth($scope.months.selected.val );
 
   $scope.onClick = function (points, evt) {
     console.log(points, evt);

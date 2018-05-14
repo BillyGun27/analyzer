@@ -9,10 +9,14 @@
   <title>UA - Update Artis</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="dist/css/main.css">
-  <link rel="stylesheet" href="dist/css/normalize.css">
-  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/style.css">
   
   <base href="/">
 </head>
@@ -23,7 +27,55 @@
     <li><a href="#!/gossip">view2</a></li>
    
   </ul>-->
-
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <div class="container">
+    <header id="header">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="header_top">
+            <div class="header_top_left">
+              <ul class="top_nav">
+                <li><a href="#!/main">Home</a></li>
+             <!--   <li><a href="pages/contact.html">Contact</a></li>-->
+              </ul>
+            </div>
+            <div class="header_top_right">
+              <form action="#" class="search_form">
+                <input type="text" placeholder="Text to Search">
+                <input type="submit" value="">
+              </form>
+            </div>
+          </div>
+          <div class="header_bottom">
+            <div class="header_bottom_left"><a class="logo" href="#!/main">U<strong>A</strong> <span>Update Artist</span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="navarea">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav custom_nav">
+              <li class=""><a href="#!/main">Home</a></li>
+              <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Analysis</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#!/gossip" ><i class="fa fa-area-chart"  aria-hidden="true"></i> Chart</a></li>
+                  <li> <a href="#!/search" ><i class="fa fa-search" aria-hidden="true"></i> Search</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--
   <div class="header" >
       <a href="#!/main"><h1>UA</h1></a> 
       <h4>Update Artis</h4>
@@ -32,7 +84,7 @@
 
      
 
-    </div>
+    </div>-->
 
     
   <!--[if lt IE 7]>
@@ -41,12 +93,45 @@
 
   <div ng-view></div>
 
+  </div>
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="container">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="single_footer_top wow fadeInRight">
+              <h2>About Us</h2>
+              <p>UA atau Update Artist merupakan situs pemberitaan mengenai artis dalam negeri maupun luar negeri</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer_bottom_left">
+              <p>Copyright &copy; 2045 <a href="index.html">lvxv</a></p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer_bottom_right">
+              <p>Developed BY Teknik Komputer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="dist/js/modernizr-2.8.3.min.js"></script>
   <script src="dist/js/jquery.min.js"></script>
+  <script src="dist/js/wow.min.js"></script> 
+  <script src="dist/js/slick.min.js"></script> 
+  <script src="dist/js/custom.js"></script>
   <script src="dist/js/angular.min.js"></script>
   <script src="dist/js/angular-route.min.js"></script>
   <script src="dist/js/ngStorage.min.js"></script>
