@@ -19,24 +19,26 @@ const webhoseio = require('webhoseio');
 
 const client = webhoseio.config({token: 'd90435dc-535d-4a5a-995d-3dc9c2150960'});
 //callNews();
-function callNews(){
-  /*
+//function callNews(){
+  router.get('/fetch', function(req, res, next) { 
+/*
     const query_params = {
       "q": "thread.country:ID site_category:celebrity_fan_gossip",
       "ts":"1526228933003",
       "sort": "crawled"
     }*/
     //us 1523642706678 ,1523642706678
+    /*
     const query_params = {
-      "q": "site_category:celebrity_fan_gossip language:english published:<1525107600000",
-      "ts": "1523642706678",
+      "q": "site_category:celebrity_fan_gossip language:english  published:>1525107600000",
+      "ts": "1524801843516",
       "sort": "published"
         }
 
    ClientHead =  client.query('filterWebContent', query_params)
       .then(output => {
           console.log("head");
-          /*
+          
             MongoClient.connect(url, function(err, db) {
               if (err) throw err;
               var dbo = db.db("analyzer");
@@ -45,7 +47,7 @@ function callNews(){
                   console.log("1 document inserted");
                   db.close();
                 });
-            }); */
+            }); 
         console.log( output['posts'][0]['thread']['title']); // Print the text of the first post
         console.log( output['posts'][0]['published']); // Print the text of the first post publication date
         //console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
@@ -56,10 +58,11 @@ function callNews(){
         return client.getNext();
       })
 
-      for(var i = 0;i<40;i++){
+      for(var i = 0;i<1;i++){
         
         ClientHead =  ClientHead.then(output => {
-            MongoClient.connect(url, function(err, db) {
+            
+          MongoClient.connect(url, function(err, db) {
               if (err) throw err;
               var dbo = db.db("analyzer");
               dbo.collection("news").insertMany( output['posts'] , function(err, res) {
@@ -81,12 +84,17 @@ function callNews(){
           });
 
 
-      }
-      console.log("loop end");
+      }*/
+      
+     // ClientHead =  ClientHead.then(output => {
+        res.send("Pengambilan Data Selesai");
+     //   console.log("selesai");
+     // });
     
     
 
-}
+//}
+});
 /*
 client.query('filterWebContent', { "q": "thread.country:ID site_category:celebrity_fan_gossip",
 "ts":"1521470830510",

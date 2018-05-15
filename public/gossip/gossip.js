@@ -11,6 +11,14 @@ angular.module('myApp.gossip', ['ngRoute'])
     templateUrl: 'gossip/search.html',
     controller: 'SearchCtrl'
   });
+  $routeProvider.when('/bar', {
+    templateUrl: 'gossip/bar.html',
+    controller: 'BarCtrl'
+  });
+  $routeProvider.when('/fetchdata', {
+    templateUrl: 'gossip/fetchdata.html',
+    controller: 'FetchCtrl'
+  });
 }])
 
 .controller('GossipCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
@@ -136,8 +144,12 @@ $scope.setmonth = function (month){
 
 $scope.colors =   [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'];
 
-//bar
-/*
+
+
+}])
+.controller('BarCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
+  //bar
+
 $scope.bar = {};
 $scope.bar.labels =[];//=  ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
 $scope.bar.series = ['Series A'];
@@ -153,8 +165,8 @@ $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
     }
     console.log($scope.bar.labels);
   })
-*/
 
+ 
 }])
 .controller('SearchCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
   $scope.params = $routeParams;
@@ -171,7 +183,7 @@ $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
     $http.post(location.origin+"/news/filter/search", data).then(function (response) {
      console.log("news");
      //console.log( JSON.stringify(data) );
-     //console.log(response.data);
+     console.log(response.data);
      $scope.news = response.data
    })
    
@@ -180,4 +192,20 @@ $scope.bar.data =[];//=   [65, 59, 80, 81, 56, 55, 40] ;
   }
   // $scope.setmonth($scope.months.selected.val );
  
-}]);
+}])
+.controller('FetchCtrl', ['$scope','$http','$routeParams',function($scope,$http,$routeParams) {
+  //bar
+
+  $scope.fetch = "Klik Untuk Ambil Data";
+  $scope.TakeData = function (){
+    $scope.fetch = "Sedang Mengambil";
+      $http.get( location.origin+"/news/fetch").then(function (response) {
+        $scope.fetch = response.data;
+        console.log(response.data);
+    
+      })
+  }
+ 
+
+ 
+}])
